@@ -115,7 +115,7 @@ namespace SpreadsheetChartAPISamples
 
             Worksheet active = workbook.Worksheets.ActiveWorksheet;
             if (active != null) {
-                Range usedRange =active.GetUsedRange();
+                CellRange usedRange =active.GetUsedRange();
                 active.SelectedCell = usedRange[usedRange.RowCount * usedRange.ColumnCount - 1].Offset(1, 1);
             }
             codeEditor.AfterCompile(args.Result);
