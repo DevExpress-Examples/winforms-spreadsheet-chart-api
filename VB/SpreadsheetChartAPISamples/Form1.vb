@@ -111,7 +111,7 @@ Namespace SpreadsheetChartAPISamples
 
             Dim active As Worksheet = workbook.Worksheets.ActiveWorksheet
             If active IsNot Nothing Then
-                Dim usedRange As Range = active.GetUsedRange()
+                Dim usedRange As CellRange = active.GetUsedRange()
                 active.SelectedCell = usedRange(usedRange.RowCount * usedRange.ColumnCount - 1).Offset(1, 1)
             End If
 
