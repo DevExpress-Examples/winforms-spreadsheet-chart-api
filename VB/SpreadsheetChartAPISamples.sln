@@ -1,5 +1,7 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SpreadsheetChartAPISamples", "SpreadsheetChartAPISamples\SpreadsheetChartAPISamples.vbproj", "{4A0889CB-9D34-4071-A3AF-7C8D150CA9D6}"
 EndProject
 Global

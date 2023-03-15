@@ -1,4 +1,3 @@
-﻿Imports Microsoft.VisualBasic
 Imports DevExpress.Spreadsheet
 Imports DevExpress.Spreadsheet.Charts
 Imports System
@@ -8,27 +7,22 @@ Imports System.Text
 Imports System.Threading.Tasks
 
 Namespace SpreadsheetChartAPIActions
-	Public NotInheritable Class Protection
-		Private Sub New()
-		End Sub
-		Private Shared Sub ProtectChart(ByVal workbook As IWorkbook)
-'			#Region "#ProtectChart"
-			Dim worksheet As Worksheet = workbook.Worksheets("chartTask3")
-			workbook.Worksheets.ActiveWorksheet = worksheet
 
-			' Create a chart and specify its location.
-			Dim chart As Chart = worksheet.Charts.Add(ChartType.ColumnClustered, worksheet("B2:D4"))
-			chart.TopLeftCell = worksheet.Cells("H2")
-			chart.BottomRightCell = worksheet.Cells("N14")
+    Public Module Protection
 
-			' Specify the chart style.
-			chart.Style = ChartStyle.ColorDark
-
-			' Apply the chart protection.
-			chart.Options.Protection = ChartProtection.All
-
-'			#End Region ' #ProtectChart
-		End Sub
-
-	End Class
+        Private Sub ProtectChart(ByVal workbook As DevExpress.Spreadsheet.IWorkbook)
+'#Region "#ProtectChart"
+            Dim worksheet As DevExpress.Spreadsheet.Worksheet = workbook.Worksheets("chartTask3")
+            workbook.Worksheets.ActiveWorksheet = worksheet
+            ' Create a chart and specify its location.
+            Dim chart As DevExpress.Spreadsheet.Charts.Chart = worksheet.Charts.Add(DevExpress.Spreadsheet.Charts.ChartType.ColumnClustered, worksheet("B2:D4"))
+            chart.TopLeftCell = worksheet.Cells("H2")
+            chart.BottomRightCell = worksheet.Cells("N14")
+            ' Specify the chart style.
+            chart.Style = DevExpress.Spreadsheet.Charts.ChartStyle.ColorDark
+            ' Apply the chart protection.
+            chart.Options.Protection = DevExpress.Spreadsheet.Charts.ChartProtection.All
+'#End Region  ' #ProtectChart
+        End Sub
+    End Module
 End Namespace
