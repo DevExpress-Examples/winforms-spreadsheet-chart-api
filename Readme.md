@@ -3,8 +3,16 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/E5222)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-<!-- default file list -->
-*Files to look at*:
+
+# WinForms Spreadsheet Chart API
+
+This example demonstrates how to use the SpreadsheetControl Chart API to programmatically manage charts in worksheets.
+
+The application includes the **TreeList** that contains all available actions, and the **SpreadsheetControl** that shows the result of code execution. Click on the required action in the TreeList to view the result.
+
+![main form](./media/image.png)
+
+## Files to Review
 
 * [AxesActions.cs](./CS/SpreadsheetChartAPISamples/CodeExamples/AxesActions.cs) (VB: [AxesActions.vb](./VB/SpreadsheetChartAPISamples/CodeExamples/AxesActions.vb))
 * [Charts.cs](./CS/SpreadsheetChartAPISamples/CodeExamples/Charts.cs) (VB: [Charts.vb](./VB/SpreadsheetChartAPISamples/CodeExamples/Charts.vb))
@@ -17,12 +25,10 @@
 * [StyleActions.cs](./CS/SpreadsheetChartAPISamples/CodeExamples/StyleActions.cs) (VB: [StyleActions.vb](./VB/SpreadsheetChartAPISamples/CodeExamples/StyleActions.vb))
 * [TitlesActions.cs](./CS/SpreadsheetChartAPISamples/CodeExamples/TitlesActions.cs) (VB: [TitlesActions.vb](./VB/SpreadsheetChartAPISamples/CodeExamples/TitlesActions.vb))
 * [ViewOptionsActions.cs](./CS/SpreadsheetChartAPISamples/CodeExamples/ViewOptionsActions.cs) (VB: [ViewOptionsActions.vb](./VB/SpreadsheetChartAPISamples/CodeExamples/ViewOptionsActions.vb))
-<!-- default file list end -->
-# WinForms Spreadsheet Chart API
+* [TrendlineActions.cs](./CS/SpreadsheetChartAPISamples/CodeExamples/TrendlineActions.cs) (VB: [TrendlineActions.vb](./VB/SpreadsheetChartAPISamples/CodeExamples/TrendlineActions.vb))
+* [DataTableActions.cs](./CS/SpreadsheetChartAPISamples/CodeExamples/DataTableActions.cs) (VB: [DataTableActions.vb](./VB/SpreadsheetChartAPISamples/CodeExamples/DataTableActions.vb))
 
+## Documentation
 
-<p>This example demonstrates how to use the SpreadsheetControl Chart API to programmatically manage charts in worksheets.<br> The application includes the RichEditControl (at the top) used to display and edit the code and the SpreadsheetControl (at the bottom) which shows the result of code execution.<br> You can modify the code and watch the result. The code is executed every two seconds. If an error occurs during compilation or execution, the code window background color turns to pink.<br><br><strong>Starting from v2017 vol.2:</strong><br>- Create and manage chart sheets in a workbook</p>
-
-<br/>
-
-
+* [Spreadsheet Chart Overview](https://docs.devexpress.com/WindowsForms/16437/controls-and-libraries/spreadsheet/charts-and-graphics/charting-overview)
+* [Spreadsheet Chart Examples](https://docs.devexpress.com/WindowsForms/17093/controls-and-libraries/spreadsheet/examples/charts)
