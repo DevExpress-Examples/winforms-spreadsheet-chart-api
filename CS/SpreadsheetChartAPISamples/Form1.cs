@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace SpreadsheetChartAPISamples
 {
-    public class Form1 : Form
+    public class Form1 : DevExpress.XtraEditors.XtraForm
     {
         CultureInfo defaultCulture = new CultureInfo("en-US");
         //PrintableComponentLinkBase link;
@@ -249,12 +249,20 @@ namespace SpreadsheetChartAPISamples
             this.verticalSplitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.treeList1 = new DevExpress.XtraTreeList.TreeList();
             ((System.ComponentModel.ISupportInitialize)(this.horizontalSplitContainerControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.horizontalSplitContainerControl1.Panel1)).BeginInit();
+            this.horizontalSplitContainerControl1.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.horizontalSplitContainerControl1.Panel2)).BeginInit();
+            this.horizontalSplitContainerControl1.Panel2.SuspendLayout();
             this.horizontalSplitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.verticalSplitContainerControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalSplitContainerControl1.Panel1)).BeginInit();
+            this.verticalSplitContainerControl1.Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.verticalSplitContainerControl1.Panel2)).BeginInit();
+            this.verticalSplitContainerControl1.Panel2.SuspendLayout();
             this.verticalSplitContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).BeginInit();
             this.SuspendLayout();
@@ -265,14 +273,21 @@ namespace SpreadsheetChartAPISamples
             this.horizontalSplitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.horizontalSplitContainerControl1.Horizontal = false;
             this.horizontalSplitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.horizontalSplitContainerControl1.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.horizontalSplitContainerControl1.Name = "horizontalSplitContainerControl1";
+            // 
+            // horizontalSplitContainerControl1.Panel1
+            // 
             this.horizontalSplitContainerControl1.Panel1.Controls.Add(this.xtraTabControl1);
             this.horizontalSplitContainerControl1.Panel1.Controls.Add(this.codeExampleNameLbl);
             this.horizontalSplitContainerControl1.Panel1.Text = "Panel1";
+            // 
+            // horizontalSplitContainerControl1.Panel2
+            // 
             this.horizontalSplitContainerControl1.Panel2.Controls.Add(this.spreadsheet);
             this.horizontalSplitContainerControl1.Panel2.Text = "Panel2";
-            this.horizontalSplitContainerControl1.Size = new System.Drawing.Size(945, 655);
-            this.horizontalSplitContainerControl1.SplitterPosition = 340;
+            this.horizontalSplitContainerControl1.Size = new System.Drawing.Size(764, 680);
+            this.horizontalSplitContainerControl1.SplitterPosition = 1674;
             this.horizontalSplitContainerControl1.TabIndex = 2;
             this.horizontalSplitContainerControl1.Text = "splitContainerControl1";
             // 
@@ -285,10 +300,11 @@ namespace SpreadsheetChartAPISamples
             this.xtraTabControl1.AppearancePage.PageClient.Options.UseBorderColor = true;
             this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraTabControl1.HeaderAutoFill = DevExpress.Utils.DefaultBoolean.True;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 44);
+            this.xtraTabControl1.Location = new System.Drawing.Point(0, 98);
+            this.xtraTabControl1.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(945, 266);
+            this.xtraTabControl1.Size = new System.Drawing.Size(0, 0);
             this.xtraTabControl1.TabIndex = 11;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -299,23 +315,22 @@ namespace SpreadsheetChartAPISamples
             this.xtraTabPage1.Appearance.HeaderActive.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.xtraTabPage1.Appearance.HeaderActive.Options.UseFont = true;
             this.xtraTabPage1.Controls.Add(this.richEditControlCS);
+            this.xtraTabPage1.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(939, 238);
+            this.xtraTabPage1.Size = new System.Drawing.Size(0, 0);
             this.xtraTabPage1.Text = "C#";
             // 
             // richEditControlCS
             // 
             this.richEditControlCS.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Draft;
             this.richEditControlCS.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richEditControlCS.EnableToolTips = true;
+            this.richEditControlCS.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel;
             this.richEditControlCS.Location = new System.Drawing.Point(0, 0);
+            this.richEditControlCS.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.richEditControlCS.Name = "richEditControlCS";
-            this.richEditControlCS.Options.Comments.ShowAllAuthors = false;
-            this.richEditControlCS.Options.CopyPaste.MaintainDocumentSectionSettings = false;
-            this.richEditControlCS.Options.Fields.UseCurrentCultureDateTimeFormat = false;
+            this.richEditControlCS.Options.Annotations.ShowAllAuthors = false;
             this.richEditControlCS.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
-            this.richEditControlCS.Options.MailMerge.KeepLastParagraph = false;
-            this.richEditControlCS.Size = new System.Drawing.Size(939, 238);
+            this.richEditControlCS.Size = new System.Drawing.Size(0, 0);
             this.richEditControlCS.TabIndex = 14;
             // 
             // xtraTabPage2
@@ -323,34 +338,34 @@ namespace SpreadsheetChartAPISamples
             this.xtraTabPage2.Appearance.HeaderActive.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
             this.xtraTabPage2.Appearance.HeaderActive.Options.UseFont = true;
             this.xtraTabPage2.Controls.Add(this.richEditControlVB);
+            this.xtraTabPage2.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(939, 238);
+            this.xtraTabPage2.Size = new System.Drawing.Size(0, 0);
             this.xtraTabPage2.Text = "VB";
             // 
             // richEditControlVB
             // 
             this.richEditControlVB.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Draft;
             this.richEditControlVB.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richEditControlVB.EnableToolTips = true;
+            this.richEditControlVB.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel;
             this.richEditControlVB.Location = new System.Drawing.Point(0, 0);
+            this.richEditControlVB.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.richEditControlVB.Name = "richEditControlVB";
-            this.richEditControlVB.Options.Comments.ShowAllAuthors = false;
-            this.richEditControlVB.Options.CopyPaste.MaintainDocumentSectionSettings = false;
-            this.richEditControlVB.Options.Fields.UseCurrentCultureDateTimeFormat = false;
+            this.richEditControlVB.Options.Annotations.ShowAllAuthors = false;
             this.richEditControlVB.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden;
-            this.richEditControlVB.Options.MailMerge.KeepLastParagraph = false;
-            this.richEditControlVB.Size = new System.Drawing.Size(939, 238);
+            this.richEditControlVB.Size = new System.Drawing.Size(0, 0);
             this.richEditControlVB.TabIndex = 15;
             // 
             // codeExampleNameLbl
             // 
             this.codeExampleNameLbl.Appearance.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.codeExampleNameLbl.Appearance.Options.UseFont = true;
             this.codeExampleNameLbl.Dock = System.Windows.Forms.DockStyle.Top;
             this.codeExampleNameLbl.Location = new System.Drawing.Point(0, 0);
-            this.codeExampleNameLbl.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
+            this.codeExampleNameLbl.Margin = new System.Windows.Forms.Padding(14, 26, 14, 26);
             this.codeExampleNameLbl.Name = "codeExampleNameLbl";
-            this.codeExampleNameLbl.Padding = new System.Windows.Forms.Padding(0, 0, 0, 12);
-            this.codeExampleNameLbl.Size = new System.Drawing.Size(72, 44);
+            this.codeExampleNameLbl.Padding = new System.Windows.Forms.Padding(0, 0, 0, 59);
+            this.codeExampleNameLbl.Size = new System.Drawing.Size(87, 98);
             this.codeExampleNameLbl.TabIndex = 10;
             this.codeExampleNameLbl.Text = "label1";
             // 
@@ -358,16 +373,19 @@ namespace SpreadsheetChartAPISamples
             // 
             this.spreadsheet.Dock = System.Windows.Forms.DockStyle.Fill;
             this.spreadsheet.Location = new System.Drawing.Point(0, 0);
+            this.spreadsheet.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.spreadsheet.Name = "spreadsheet";
             this.spreadsheet.Options.Culture = new System.Globalization.CultureInfo("ru-RU");
             this.spreadsheet.Options.Export.Csv.Culture = new System.Globalization.CultureInfo("");
             this.spreadsheet.Options.Export.Txt.Culture = new System.Globalization.CultureInfo("");
+            this.spreadsheet.Options.Import.Csv.AutoDetectDelimiter = false;
             this.spreadsheet.Options.Import.Csv.Culture = new System.Globalization.CultureInfo("");
             this.spreadsheet.Options.Import.Csv.Delimiter = ',';
+            this.spreadsheet.Options.Import.Txt.AutoDetectDelimiter = false;
             this.spreadsheet.Options.Import.Txt.Culture = new System.Globalization.CultureInfo("");
             this.spreadsheet.Options.Import.Txt.Delimiter = ',';
             this.spreadsheet.Options.View.Charts.Antialiasing = DevExpress.XtraSpreadsheet.DocumentCapability.Enabled;
-            this.spreadsheet.Size = new System.Drawing.Size(945, 340);
+            this.spreadsheet.Size = new System.Drawing.Size(764, 668);
             this.spreadsheet.TabIndex = 5;
             // 
             // verticalSplitContainerControl1
@@ -375,13 +393,20 @@ namespace SpreadsheetChartAPISamples
             this.verticalSplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.verticalSplitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2;
             this.verticalSplitContainerControl1.Location = new System.Drawing.Point(0, 0);
+            this.verticalSplitContainerControl1.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
             this.verticalSplitContainerControl1.Name = "verticalSplitContainerControl1";
+            // 
+            // verticalSplitContainerControl1.Panel1
+            // 
             this.verticalSplitContainerControl1.Panel1.Controls.Add(this.horizontalSplitContainerControl1);
             this.verticalSplitContainerControl1.Panel1.Text = "Panel1";
+            // 
+            // verticalSplitContainerControl1.Panel2
+            // 
             this.verticalSplitContainerControl1.Panel2.Controls.Add(this.treeList1);
             this.verticalSplitContainerControl1.Panel2.Text = "Panel2";
-            this.verticalSplitContainerControl1.Size = new System.Drawing.Size(1212, 655);
-            this.verticalSplitContainerControl1.SplitterPosition = 262;
+            this.verticalSplitContainerControl1.Size = new System.Drawing.Size(1132, 680);
+            this.verticalSplitContainerControl1.SplitterPosition = 356;
             this.verticalSplitContainerControl1.TabIndex = 0;
             this.verticalSplitContainerControl1.Text = "verticalSplitContainerControl1";
             // 
@@ -390,24 +415,40 @@ namespace SpreadsheetChartAPISamples
             this.treeList1.Appearance.FocusedCell.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Underline);
             this.treeList1.Appearance.FocusedCell.Options.UseFont = true;
             this.treeList1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeList1.FixedLineWidth = 7;
+            this.treeList1.HorzScrollStep = 14;
             this.treeList1.Location = new System.Drawing.Point(0, 0);
+            this.treeList1.Margin = new System.Windows.Forms.Padding(14, 15, 14, 15);
+            this.treeList1.MinWidth = 93;
             this.treeList1.Name = "treeList1";
-            this.treeList1.Size = new System.Drawing.Size(262, 655);
+            this.treeList1.Size = new System.Drawing.Size(356, 680);
             this.treeList1.TabIndex = 11;
+            this.treeList1.TreeLevelWidth = 58;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1212, 655);
+            this.ClientSize = new System.Drawing.Size(1132, 680);
             this.Controls.Add(this.verticalSplitContainerControl1);
+            this.IconOptions.ShowIcon = false;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.horizontalSplitContainerControl1.Panel1)).EndInit();
+            this.horizontalSplitContainerControl1.Panel1.ResumeLayout(false);
+            this.horizontalSplitContainerControl1.Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.horizontalSplitContainerControl1.Panel2)).EndInit();
+            this.horizontalSplitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.horizontalSplitContainerControl1)).EndInit();
             this.horizontalSplitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
             this.xtraTabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.verticalSplitContainerControl1.Panel1)).EndInit();
+            this.verticalSplitContainerControl1.Panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.verticalSplitContainerControl1.Panel2)).EndInit();
+            this.verticalSplitContainerControl1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.verticalSplitContainerControl1)).EndInit();
             this.verticalSplitContainerControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.treeList1)).EndInit();
