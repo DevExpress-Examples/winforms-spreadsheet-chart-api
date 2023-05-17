@@ -16,14 +16,14 @@ Imports System.Windows.Forms
 
 Namespace SpreadsheetChartAPISamples
 	Public Class Form1
-		Inherits Form
+		Inherits DevExpress.XtraEditors.XtraForm
 		Private defaultCulture As New CultureInfo("en-US")
 		'PrintableComponentLinkBase link;
 		Private horizontalSplitContainerControl1 As SplitContainerControl
 		Private verticalSplitContainerControl1 As SplitContainerControl
 		'IContainer components = null;
 
-		#Region "Controls"
+#Region "Controls"
 		Private spreadsheet As SpreadsheetControl
 		Private treeList1 As TreeList
 		Private xtraTabControl1 As XtraTabControl
@@ -31,7 +31,7 @@ Namespace SpreadsheetChartAPISamples
 		Private richEditControlCS As RichEditControl
 		Private xtraTabPage2 As XtraTabPage
 		Private richEditControlVB As RichEditControl
-		#End Region
+#End Region
 
 		Private codeExampleNameLbl As LabelControl
 		Private codeEditor As ExampleCodeEditor
@@ -109,13 +109,13 @@ Namespace SpreadsheetChartAPISamples
 				sheet.PrintOptions.PrintGridlines = True
 			Next sheet
 
-            Dim active As Worksheet = workbook.Worksheets.ActiveWorksheet
-            If active IsNot Nothing Then
-                Dim usedRange As CellRange = active.GetUsedRange()
-                active.SelectedCell = usedRange(usedRange.RowCount * usedRange.ColumnCount - 1).Offset(1, 1)
-            End If
+			Dim active As Worksheet = workbook.Worksheets.ActiveWorksheet
+			If active IsNot Nothing Then
+				Dim usedRange As CellRange = active.GetUsedRange()
+				active.SelectedCell = usedRange(usedRange.RowCount * usedRange.ColumnCount - 1).Offset(1, 1)
+			End If
 
-            codeEditor.AfterCompile(args.Result)
+			codeEditor.AfterCompile(args.Result)
 			spreadsheet.EndUpdate()
 		End Sub
 
@@ -138,7 +138,7 @@ Namespace SpreadsheetChartAPISamples
 			End Set
 		End Property
 		Private Sub ShowExamplesInTreeList(ByVal treeList As TreeList, ByVal examples As List(Of CodeExampleGroup))
-'			#Region "InitializeTreeList"
+			'			#Region "InitializeTreeList"
 			treeList.OptionsPrint.UsePrintStyles = True
 			AddHandler treeList.FocusedNodeChanged, AddressOf OnNewExampleSelected
 			treeList.OptionsView.ShowColumns = False
@@ -147,13 +147,13 @@ Namespace SpreadsheetChartAPISamples
 
 			AddHandler treeList.VirtualTreeGetChildNodes, AddressOf treeList_VirtualTreeGetChildNodes
 			AddHandler treeList.VirtualTreeGetCellValue, AddressOf treeList_VirtualTreeGetCellValue
-'			#End Region
+			'			#End Region
 			Dim col1 As New TreeListColumn()
 			col1.VisibleIndex = 0
 			col1.OptionsColumn.AllowEdit = False
 			col1.OptionsColumn.AllowMove = False
 			col1.OptionsColumn.ReadOnly = True
-			treeList.Columns.AddRange(New TreeListColumn() { col1 })
+			treeList.Columns.AddRange(New TreeListColumn() {col1})
 
 			treeList.DataSource = New Object()
 			treeList.ExpandAll()
@@ -225,225 +225,180 @@ Namespace SpreadsheetChartAPISamples
 				InitializeCodeEvaluationEventArgs(e, e.RegionName)
 			End If
 		End Sub
-		#Region "InitializeComponent"
+#Region "InitializeComponent"
 		Private Sub InitializeComponent()
-            Me.horizontalSplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-            Me.xtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
-            Me.xtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
-            Me.richEditControlCS = New DevExpress.XtraRichEdit.RichEditControl()
-            Me.xtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
-            Me.richEditControlVB = New DevExpress.XtraRichEdit.RichEditControl()
-            Me.codeExampleNameLbl = New DevExpress.XtraEditors.LabelControl()
-            Me.spreadsheet = New DevExpress.XtraSpreadsheet.SpreadsheetControl()
-            Me.verticalSplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
-            Me.treeList1 = New DevExpress.XtraTreeList.TreeList()
-            CType(Me.horizontalSplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.horizontalSplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
-            Me.horizontalSplitContainerControl1.Panel1.SuspendLayout()
-            CType(Me.horizontalSplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
-            Me.horizontalSplitContainerControl1.Panel2.SuspendLayout()
-            Me.horizontalSplitContainerControl1.SuspendLayout()
-            CType(Me.xtraTabControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            Me.xtraTabControl1.SuspendLayout()
-            Me.xtraTabPage1.SuspendLayout()
-            Me.xtraTabPage2.SuspendLayout()
-            CType(Me.verticalSplitContainerControl1, System.ComponentModel.ISupportInitialize).BeginInit()
-            CType(Me.verticalSplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).BeginInit()
-            Me.verticalSplitContainerControl1.Panel1.SuspendLayout()
-            CType(Me.verticalSplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).BeginInit()
-            Me.verticalSplitContainerControl1.Panel2.SuspendLayout()
-            Me.verticalSplitContainerControl1.SuspendLayout()
-            CType(Me.treeList1, System.ComponentModel.ISupportInitialize).BeginInit()
-            Me.SuspendLayout()
-            '
-            'horizontalSplitContainerControl1
-            '
-            Me.horizontalSplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.horizontalSplitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2
-            Me.horizontalSplitContainerControl1.Horizontal = False
-            Me.horizontalSplitContainerControl1.Location = New System.Drawing.Point(0, 0)
-            Me.horizontalSplitContainerControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-            Me.horizontalSplitContainerControl1.Name = "horizontalSplitContainerControl1"
-            '
-            'horizontalSplitContainerControl1.Panel1
-            '
-            Me.horizontalSplitContainerControl1.Panel1.Controls.Add(Me.xtraTabControl1)
-            Me.horizontalSplitContainerControl1.Panel1.Controls.Add(Me.codeExampleNameLbl)
-            Me.horizontalSplitContainerControl1.Panel1.Text = "Panel1"
-            '
-            'horizontalSplitContainerControl1.Panel2
-            '
-            Me.horizontalSplitContainerControl1.Panel2.Controls.Add(Me.spreadsheet)
-            Me.horizontalSplitContainerControl1.Panel2.Text = "Panel2"
-            Me.horizontalSplitContainerControl1.Size = New System.Drawing.Size(1255, 806)
-            Me.horizontalSplitContainerControl1.SplitterPosition = 418
-            Me.horizontalSplitContainerControl1.TabIndex = 2
-            Me.horizontalSplitContainerControl1.Text = "splitContainerControl1"
-            '
-            'xtraTabControl1
-            '
-            Me.xtraTabControl1.AppearancePage.PageClient.BackColor = System.Drawing.Color.Transparent
-            Me.xtraTabControl1.AppearancePage.PageClient.BackColor2 = System.Drawing.Color.Transparent
-            Me.xtraTabControl1.AppearancePage.PageClient.BorderColor = System.Drawing.Color.Transparent
-            Me.xtraTabControl1.AppearancePage.PageClient.Options.UseBackColor = True
-            Me.xtraTabControl1.AppearancePage.PageClient.Options.UseBorderColor = True
-            Me.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.xtraTabControl1.HeaderAutoFill = DevExpress.Utils.DefaultBoolean.[True]
-            Me.xtraTabControl1.Location = New System.Drawing.Point(0, 54)
-            Me.xtraTabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-            Me.xtraTabControl1.Name = "xtraTabControl1"
-            Me.xtraTabControl1.SelectedTabPage = Me.xtraTabPage1
-            Me.xtraTabControl1.Size = New System.Drawing.Size(1255, 322)
-            Me.xtraTabControl1.TabIndex = 11
-            Me.xtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.xtraTabPage1, Me.xtraTabPage2})
-            '
-            'xtraTabPage1
-            '
-            Me.xtraTabPage1.Appearance.HeaderActive.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-            Me.xtraTabPage1.Appearance.HeaderActive.Options.UseFont = True
-            Me.xtraTabPage1.Controls.Add(Me.richEditControlCS)
-            Me.xtraTabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-            Me.xtraTabPage1.Name = "xtraTabPage1"
-            Me.xtraTabPage1.Size = New System.Drawing.Size(1253, 291)
-            Me.xtraTabPage1.Text = "C#"
-            '
-            'richEditControlCS
-            '
-            Me.richEditControlCS.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Draft
-            Me.richEditControlCS.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.richEditControlCS.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel
-            Me.richEditControlCS.Location = New System.Drawing.Point(0, 0)
-            Me.richEditControlCS.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-            Me.richEditControlCS.Name = "richEditControlCS"
-            Me.richEditControlCS.Options.Annotations.ShowAllAuthors = False
-            Me.richEditControlCS.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden
-            Me.richEditControlCS.Size = New System.Drawing.Size(1253, 291)
-            Me.richEditControlCS.TabIndex = 14
-            '
-            'xtraTabPage2
-            '
-            Me.xtraTabPage2.Appearance.HeaderActive.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Bold)
-            Me.xtraTabPage2.Appearance.HeaderActive.Options.UseFont = True
-            Me.xtraTabPage2.Controls.Add(Me.richEditControlVB)
-            Me.xtraTabPage2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-            Me.xtraTabPage2.Name = "xtraTabPage2"
-            Me.xtraTabPage2.Size = New System.Drawing.Size(1249, 279)
-            Me.xtraTabPage2.Text = "VB"
-            '
-            'richEditControlVB
-            '
-            Me.richEditControlVB.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Draft
-            Me.richEditControlVB.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.richEditControlVB.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel
-            Me.richEditControlVB.Location = New System.Drawing.Point(0, 0)
-            Me.richEditControlVB.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-            Me.richEditControlVB.Name = "richEditControlVB"
-            Me.richEditControlVB.Options.Annotations.ShowAllAuthors = False
-            Me.richEditControlVB.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden
-            Me.richEditControlVB.Size = New System.Drawing.Size(1249, 279)
-            Me.richEditControlVB.TabIndex = 15
-            '
-            'codeExampleNameLbl
-            '
-            Me.codeExampleNameLbl.Appearance.Font = New System.Drawing.Font("Arial", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(204, Byte))
-            Me.codeExampleNameLbl.Appearance.Options.UseFont = True
-            Me.codeExampleNameLbl.Dock = System.Windows.Forms.DockStyle.Top
-            Me.codeExampleNameLbl.Location = New System.Drawing.Point(0, 0)
-            Me.codeExampleNameLbl.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
-            Me.codeExampleNameLbl.Name = "codeExampleNameLbl"
-            Me.codeExampleNameLbl.Padding = New System.Windows.Forms.Padding(0, 0, 0, 15)
-            Me.codeExampleNameLbl.Size = New System.Drawing.Size(87, 54)
-            Me.codeExampleNameLbl.TabIndex = 10
-            Me.codeExampleNameLbl.Text = "label1"
-            '
-            'spreadsheet
-            '
-            Me.spreadsheet.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.spreadsheet.Location = New System.Drawing.Point(0, 0)
-            Me.spreadsheet.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-            Me.spreadsheet.Name = "spreadsheet"
-            Me.spreadsheet.Options.Culture = New System.Globalization.CultureInfo("ru-RU")
-            Me.spreadsheet.Options.Export.Csv.Culture = New System.Globalization.CultureInfo("")
-            Me.spreadsheet.Options.Export.Txt.Culture = New System.Globalization.CultureInfo("")
-            Me.spreadsheet.Options.Import.Csv.AutoDetectDelimiter = False
-            Me.spreadsheet.Options.Import.Csv.Culture = New System.Globalization.CultureInfo("")
-            Me.spreadsheet.Options.Import.Csv.Delimiter = Global.Microsoft.VisualBasic.ChrW(44)
-            Me.spreadsheet.Options.Import.Txt.AutoDetectDelimiter = False
-            Me.spreadsheet.Options.Import.Txt.Culture = New System.Globalization.CultureInfo("")
-            Me.spreadsheet.Options.Import.Txt.Delimiter = Global.Microsoft.VisualBasic.ChrW(44)
-            Me.spreadsheet.Options.View.Charts.Antialiasing = DevExpress.XtraSpreadsheet.DocumentCapability.Enabled
-            Me.spreadsheet.Size = New System.Drawing.Size(1255, 418)
-            Me.spreadsheet.TabIndex = 5
-            '
-            'verticalSplitContainerControl1
-            '
-            Me.verticalSplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.verticalSplitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2
-            Me.verticalSplitContainerControl1.Location = New System.Drawing.Point(0, 0)
-            Me.verticalSplitContainerControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-            Me.verticalSplitContainerControl1.Name = "verticalSplitContainerControl1"
-            '
-            'verticalSplitContainerControl1.Panel1
-            '
-            Me.verticalSplitContainerControl1.Panel1.Controls.Add(Me.horizontalSplitContainerControl1)
-            Me.verticalSplitContainerControl1.Panel1.Text = "Panel1"
-            '
-            'verticalSplitContainerControl1.Panel2
-            '
-            Me.verticalSplitContainerControl1.Panel2.Controls.Add(Me.treeList1)
-            Me.verticalSplitContainerControl1.Panel2.Text = "Panel2"
-            Me.verticalSplitContainerControl1.Size = New System.Drawing.Size(1616, 806)
-            Me.verticalSplitContainerControl1.SplitterPosition = 349
-            Me.verticalSplitContainerControl1.TabIndex = 0
-            Me.verticalSplitContainerControl1.Text = "verticalSplitContainerControl1"
-            '
-            'treeList1
-            '
-            Me.treeList1.Appearance.FocusedCell.Font = New System.Drawing.Font("Tahoma", 8.25!, System.Drawing.FontStyle.Underline)
-            Me.treeList1.Appearance.FocusedCell.Options.UseFont = True
-            Me.treeList1.Dock = System.Windows.Forms.DockStyle.Fill
-            Me.treeList1.FixedLineWidth = 3
-            Me.treeList1.HorzScrollStep = 4
-            Me.treeList1.Location = New System.Drawing.Point(0, 0)
-            Me.treeList1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-            Me.treeList1.MinWidth = 27
-            Me.treeList1.Name = "treeList1"
-            Me.treeList1.Size = New System.Drawing.Size(349, 806)
-            Me.treeList1.TabIndex = 11
-            Me.treeList1.TreeLevelWidth = 24
-            '
-            'Form1
-            '
-            Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
-            Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-            Me.ClientSize = New System.Drawing.Size(1616, 806)
-            Me.Controls.Add(Me.verticalSplitContainerControl1)
-            Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-            Me.Name = "Form1"
-            CType(Me.horizontalSplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.horizontalSplitContainerControl1.Panel1.ResumeLayout(False)
-            Me.horizontalSplitContainerControl1.Panel1.PerformLayout()
-            CType(Me.horizontalSplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.horizontalSplitContainerControl1.Panel2.ResumeLayout(False)
-            CType(Me.horizontalSplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.horizontalSplitContainerControl1.ResumeLayout(False)
-            CType(Me.xtraTabControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.xtraTabControl1.ResumeLayout(False)
-            Me.xtraTabPage1.ResumeLayout(False)
-            Me.xtraTabPage2.ResumeLayout(False)
-            CType(Me.verticalSplitContainerControl1.Panel1, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.verticalSplitContainerControl1.Panel1.ResumeLayout(False)
-            CType(Me.verticalSplitContainerControl1.Panel2, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.verticalSplitContainerControl1.Panel2.ResumeLayout(False)
-            CType(Me.verticalSplitContainerControl1, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.verticalSplitContainerControl1.ResumeLayout(False)
-            CType(Me.treeList1, System.ComponentModel.ISupportInitialize).EndInit()
-            Me.ResumeLayout(False)
-
-        End Sub
+			Me.horizontalSplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+			Me.xtraTabControl1 = New DevExpress.XtraTab.XtraTabControl()
+			Me.xtraTabPage1 = New DevExpress.XtraTab.XtraTabPage()
+			Me.richEditControlCS = New DevExpress.XtraRichEdit.RichEditControl()
+			Me.xtraTabPage2 = New DevExpress.XtraTab.XtraTabPage()
+			Me.richEditControlVB = New DevExpress.XtraRichEdit.RichEditControl()
+			Me.codeExampleNameLbl = New DevExpress.XtraEditors.LabelControl()
+			Me.spreadsheet = New DevExpress.XtraSpreadsheet.SpreadsheetControl()
+			Me.verticalSplitContainerControl1 = New DevExpress.XtraEditors.SplitContainerControl()
+			Me.treeList1 = New DevExpress.XtraTreeList.TreeList()
+			CType((Me.horizontalSplitContainerControl1), System.ComponentModel.ISupportInitialize).BeginInit()
+			CType((Me.horizontalSplitContainerControl1.Panel1), System.ComponentModel.ISupportInitialize).BeginInit()
+			Me.horizontalSplitContainerControl1.Panel1.SuspendLayout()
+			CType((Me.horizontalSplitContainerControl1.Panel2), System.ComponentModel.ISupportInitialize).BeginInit()
+			Me.horizontalSplitContainerControl1.Panel2.SuspendLayout()
+			Me.horizontalSplitContainerControl1.SuspendLayout()
+			CType((Me.xtraTabControl1), System.ComponentModel.ISupportInitialize).BeginInit()
+			Me.xtraTabControl1.SuspendLayout()
+			Me.xtraTabPage1.SuspendLayout()
+			Me.xtraTabPage2.SuspendLayout()
+			CType((Me.verticalSplitContainerControl1), System.ComponentModel.ISupportInitialize).BeginInit()
+			CType((Me.verticalSplitContainerControl1.Panel1), System.ComponentModel.ISupportInitialize).BeginInit()
+			Me.verticalSplitContainerControl1.Panel1.SuspendLayout()
+			CType((Me.verticalSplitContainerControl1.Panel2), System.ComponentModel.ISupportInitialize).BeginInit()
+			Me.verticalSplitContainerControl1.Panel2.SuspendLayout()
+			Me.verticalSplitContainerControl1.SuspendLayout()
+			CType((Me.treeList1), System.ComponentModel.ISupportInitialize).BeginInit()
+			Me.SuspendLayout()
+			Me.horizontalSplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
+			Me.horizontalSplitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2
+			Me.horizontalSplitContainerControl1.Horizontal = False
+			Me.horizontalSplitContainerControl1.Location = New System.Drawing.Point(0, 0)
+			Me.horizontalSplitContainerControl1.Margin = New System.Windows.Forms.Padding(14, 15, 14, 15)
+			Me.horizontalSplitContainerControl1.Name = "horizontalSplitContainerControl1"
+			Me.horizontalSplitContainerControl1.Panel1.Controls.Add(Me.xtraTabControl1)
+			Me.horizontalSplitContainerControl1.Panel1.Controls.Add(Me.codeExampleNameLbl)
+			Me.horizontalSplitContainerControl1.Panel1.Text = "Panel1"
+			Me.horizontalSplitContainerControl1.Panel2.Controls.Add(Me.spreadsheet)
+			Me.horizontalSplitContainerControl1.Panel2.Text = "Panel2"
+			Me.horizontalSplitContainerControl1.Size = New System.Drawing.Size(764, 680)
+			Me.horizontalSplitContainerControl1.SplitterPosition = 1674
+			Me.horizontalSplitContainerControl1.TabIndex = 2
+			Me.horizontalSplitContainerControl1.Text = "splitContainerControl1"
+			Me.xtraTabControl1.AppearancePage.PageClient.BackColor = System.Drawing.Color.Transparent
+			Me.xtraTabControl1.AppearancePage.PageClient.BackColor2 = System.Drawing.Color.Transparent
+			Me.xtraTabControl1.AppearancePage.PageClient.BorderColor = System.Drawing.Color.Transparent
+			Me.xtraTabControl1.AppearancePage.PageClient.Options.UseBackColor = True
+			Me.xtraTabControl1.AppearancePage.PageClient.Options.UseBorderColor = True
+			Me.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+			Me.xtraTabControl1.HeaderAutoFill = DevExpress.Utils.DefaultBoolean.[True]
+			Me.xtraTabControl1.Location = New System.Drawing.Point(0, 98)
+			Me.xtraTabControl1.Margin = New System.Windows.Forms.Padding(14, 15, 14, 15)
+			Me.xtraTabControl1.Name = "xtraTabControl1"
+			Me.xtraTabControl1.SelectedTabPage = Me.xtraTabPage1
+			Me.xtraTabControl1.Size = New System.Drawing.Size(0, 0)
+			Me.xtraTabControl1.TabIndex = 11
+			Me.xtraTabControl1.TabPages.AddRange(New DevExpress.XtraTab.XtraTabPage() {Me.xtraTabPage1, Me.xtraTabPage2})
+			Me.xtraTabPage1.Appearance.HeaderActive.Font = New System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold)
+			Me.xtraTabPage1.Appearance.HeaderActive.Options.UseFont = True
+			Me.xtraTabPage1.Controls.Add(Me.richEditControlCS)
+			Me.xtraTabPage1.Margin = New System.Windows.Forms.Padding(14, 15, 14, 15)
+			Me.xtraTabPage1.Name = "xtraTabPage1"
+			Me.xtraTabPage1.Size = New System.Drawing.Size(0, 0)
+			Me.xtraTabPage1.Text = "C#"
+			Me.richEditControlCS.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Draft
+			Me.richEditControlCS.Dock = System.Windows.Forms.DockStyle.Fill
+			Me.richEditControlCS.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel
+			Me.richEditControlCS.Location = New System.Drawing.Point(0, 0)
+			Me.richEditControlCS.Margin = New System.Windows.Forms.Padding(14, 15, 14, 15)
+			Me.richEditControlCS.Name = "richEditControlCS"
+			Me.richEditControlCS.Options.Annotations.ShowAllAuthors = False
+			Me.richEditControlCS.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden
+			Me.richEditControlCS.Size = New System.Drawing.Size(0, 0)
+			Me.richEditControlCS.TabIndex = 14
+			Me.xtraTabPage2.Appearance.HeaderActive.Font = New System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold)
+			Me.xtraTabPage2.Appearance.HeaderActive.Options.UseFont = True
+			Me.xtraTabPage2.Controls.Add(Me.richEditControlVB)
+			Me.xtraTabPage2.Margin = New System.Windows.Forms.Padding(14, 15, 14, 15)
+			Me.xtraTabPage2.Name = "xtraTabPage2"
+			Me.xtraTabPage2.Size = New System.Drawing.Size(0, 0)
+			Me.xtraTabPage2.Text = "VB"
+			Me.richEditControlVB.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Draft
+			Me.richEditControlVB.Dock = System.Windows.Forms.DockStyle.Fill
+			Me.richEditControlVB.LayoutUnit = DevExpress.XtraRichEdit.DocumentLayoutUnit.Pixel
+			Me.richEditControlVB.Location = New System.Drawing.Point(0, 0)
+			Me.richEditControlVB.Margin = New System.Windows.Forms.Padding(14, 15, 14, 15)
+			Me.richEditControlVB.Name = "richEditControlVB"
+			Me.richEditControlVB.Options.Annotations.ShowAllAuthors = False
+			Me.richEditControlVB.Options.HorizontalRuler.Visibility = DevExpress.XtraRichEdit.RichEditRulerVisibility.Hidden
+			Me.richEditControlVB.Size = New System.Drawing.Size(0, 0)
+			Me.richEditControlVB.TabIndex = 15
+			Me.codeExampleNameLbl.Appearance.Font = New System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (CByte((204))))
+			Me.codeExampleNameLbl.Appearance.Options.UseFont = True
+			Me.codeExampleNameLbl.Dock = System.Windows.Forms.DockStyle.Top
+			Me.codeExampleNameLbl.Location = New System.Drawing.Point(0, 0)
+			Me.codeExampleNameLbl.Margin = New System.Windows.Forms.Padding(14, 26, 14, 26)
+			Me.codeExampleNameLbl.Name = "codeExampleNameLbl"
+			Me.codeExampleNameLbl.Padding = New System.Windows.Forms.Padding(0, 0, 0, 59)
+			Me.codeExampleNameLbl.Size = New System.Drawing.Size(87, 98)
+			Me.codeExampleNameLbl.TabIndex = 10
+			Me.codeExampleNameLbl.Text = "label1"
+			Me.spreadsheet.Dock = System.Windows.Forms.DockStyle.Fill
+			Me.spreadsheet.Location = New System.Drawing.Point(0, 0)
+			Me.spreadsheet.Margin = New System.Windows.Forms.Padding(14, 15, 14, 15)
+			Me.spreadsheet.Name = "spreadsheet"
+			Me.spreadsheet.Options.Culture = New System.Globalization.CultureInfo("ru-RU")
+			Me.spreadsheet.Options.Export.Csv.Culture = New System.Globalization.CultureInfo("")
+			Me.spreadsheet.Options.Export.Txt.Culture = New System.Globalization.CultureInfo("")
+			Me.spreadsheet.Options.Import.Csv.AutoDetectDelimiter = False
+			Me.spreadsheet.Options.Import.Csv.Culture = New System.Globalization.CultureInfo("")
+			Me.spreadsheet.Options.Import.Csv.Delimiter = ","c
+			Me.spreadsheet.Options.Import.Txt.AutoDetectDelimiter = False
+			Me.spreadsheet.Options.Import.Txt.Culture = New System.Globalization.CultureInfo("")
+			Me.spreadsheet.Options.Import.Txt.Delimiter = ","c
+			Me.spreadsheet.Options.View.Charts.Antialiasing = DevExpress.XtraSpreadsheet.DocumentCapability.Enabled
+			Me.spreadsheet.Size = New System.Drawing.Size(764, 668)
+			Me.spreadsheet.TabIndex = 5
+			Me.verticalSplitContainerControl1.Dock = System.Windows.Forms.DockStyle.Fill
+			Me.verticalSplitContainerControl1.FixedPanel = DevExpress.XtraEditors.SplitFixedPanel.Panel2
+			Me.verticalSplitContainerControl1.Location = New System.Drawing.Point(0, 0)
+			Me.verticalSplitContainerControl1.Margin = New System.Windows.Forms.Padding(14, 15, 14, 15)
+			Me.verticalSplitContainerControl1.Name = "verticalSplitContainerControl1"
+			Me.verticalSplitContainerControl1.Panel1.Controls.Add(Me.horizontalSplitContainerControl1)
+			Me.verticalSplitContainerControl1.Panel1.Text = "Panel1"
+			Me.verticalSplitContainerControl1.Panel2.Controls.Add(Me.treeList1)
+			Me.verticalSplitContainerControl1.Panel2.Text = "Panel2"
+			Me.verticalSplitContainerControl1.Size = New System.Drawing.Size(1132, 680)
+			Me.verticalSplitContainerControl1.SplitterPosition = 356
+			Me.verticalSplitContainerControl1.TabIndex = 0
+			Me.verticalSplitContainerControl1.Text = "verticalSplitContainerControl1"
+			Me.treeList1.Appearance.FocusedCell.Font = New System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Underline)
+			Me.treeList1.Appearance.FocusedCell.Options.UseFont = True
+			Me.treeList1.Dock = System.Windows.Forms.DockStyle.Fill
+			Me.treeList1.FixedLineWidth = 7
+			Me.treeList1.HorzScrollStep = 14
+			Me.treeList1.Location = New System.Drawing.Point(0, 0)
+			Me.treeList1.Margin = New System.Windows.Forms.Padding(14, 15, 14, 15)
+			Me.treeList1.MinWidth = 93
+			Me.treeList1.Name = "treeList1"
+			Me.treeList1.Size = New System.Drawing.Size(356, 680)
+			Me.treeList1.TabIndex = 11
+			Me.treeList1.TreeLevelWidth = 58
+			Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0F, 16.0F)
+			Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+			Me.ClientSize = New System.Drawing.Size(1132, 680)
+			Me.Controls.Add(Me.verticalSplitContainerControl1)
+			Me.IconOptions.ShowIcon = False
+			Me.Margin = New System.Windows.Forms.Padding(4)
+			Me.Name = "Form1"
+			CType((Me.horizontalSplitContainerControl1.Panel1), System.ComponentModel.ISupportInitialize).EndInit()
+			Me.horizontalSplitContainerControl1.Panel1.ResumeLayout(False)
+			Me.horizontalSplitContainerControl1.Panel1.PerformLayout()
+			CType((Me.horizontalSplitContainerControl1.Panel2), System.ComponentModel.ISupportInitialize).EndInit()
+			Me.horizontalSplitContainerControl1.Panel2.ResumeLayout(False)
+			CType((Me.horizontalSplitContainerControl1), System.ComponentModel.ISupportInitialize).EndInit()
+			Me.horizontalSplitContainerControl1.ResumeLayout(False)
+			CType((Me.xtraTabControl1), System.ComponentModel.ISupportInitialize).EndInit()
+			Me.xtraTabControl1.ResumeLayout(False)
+			Me.xtraTabPage1.ResumeLayout(False)
+			Me.xtraTabPage2.ResumeLayout(False)
+			CType((Me.verticalSplitContainerControl1.Panel1), System.ComponentModel.ISupportInitialize).EndInit()
+			Me.verticalSplitContainerControl1.Panel1.ResumeLayout(False)
+			CType((Me.verticalSplitContainerControl1.Panel2), System.ComponentModel.ISupportInitialize).EndInit()
+			Me.verticalSplitContainerControl1.Panel2.ResumeLayout(False)
+			CType((Me.verticalSplitContainerControl1), System.ComponentModel.ISupportInitialize).EndInit()
+			Me.verticalSplitContainerControl1.ResumeLayout(False)
+			CType((Me.treeList1), System.ComponentModel.ISupportInitialize).EndInit()
+			Me.ResumeLayout(False)
+		End Sub
 #End Region
 
-        Private Sub xtraTabControl1_SelectedPageChanged(ByVal sender As Object, ByVal e As TabPageChangedEventArgs)
+		Private Sub xtraTabControl1_SelectedPageChanged(ByVal sender As Object, ByVal e As TabPageChangedEventArgs)
 			Dim value As ExampleLanguage = CType(xtraTabControl1.SelectedTabPageIndex, ExampleLanguage)
 			If codeEditor IsNot Nothing Then
 				Me.codeEditor.CurrentExampleLanguage = value

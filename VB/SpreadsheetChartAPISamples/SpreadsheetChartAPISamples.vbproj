@@ -133,11 +133,13 @@
     <Compile Include="CodeExamples\ChartSheetActions.vb" />
     <Compile Include="CodeExamples\CreationAndDataActions.vb" />
     <Compile Include="CodeExamples\DataLabelsActions.vb" />
+    <Compile Include="CodeExamples\DataTableActions.vb" />
     <Compile Include="CodeExamples\LegendActions.vb" />
     <Compile Include="CodeExamples\Protection.vb" />
     <Compile Include="CodeExamples\SeriesActions.vb" />
     <Compile Include="CodeExamples\StyleActions.vb" />
     <Compile Include="CodeExamples\TitlesActions.vb" />
+    <Compile Include="CodeExamples\TrendlineActions.vb" />
     <Compile Include="CodeExamples\ViewOptionsActions.vb" />
     <Compile Include="CodeUtils\CodeExampleModel.vb" />
     <Compile Include="CodeUtils\SpreadsheetApiModuleUtils.vb" />
