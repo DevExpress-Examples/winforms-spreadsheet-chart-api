@@ -37,7 +37,7 @@ namespace SpreadsheetChartAPIActions
             dataTableOptions.ShowLegendKeys = false;
 
             dataTableOptions.ShowVerticalBorder = false;
-            dataTableOptions.ShowOutline = false;
+            dataTableOptions.ShowHorizontalBorder = false;
             #endregion #ChangeDataTableBorders
         }
 
